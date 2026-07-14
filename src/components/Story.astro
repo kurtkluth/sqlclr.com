@@ -5,6 +5,12 @@ const chapters = [
     title: 'The extended stored procedure era',
     body: `We wrote xp_ DLLs in C against the Open Data Services API and loaded them straight into the engine's address space. One stray pointer could take down the entire server — and sometimes did, at 2 a.m., with a pager screaming. It was raw, unforgiving, and it taught a generation of us exactly where the engine's boundaries are, because we paid for every one we crossed.`,
     mono: 'xp_yourproc.dll → sqlservr.exe',
+    ref: {
+      href: 'http://www.naughter.com/supersqlsystems.html',
+      text: 'The era had a canon: Gama & Naughter,',
+      title: 'Super SQL Server Systems',
+      tail: '(2006) — 570 pages of native-code XPs, dog-eared on the desk of everyone who did this work.',
+    },
   },
   {
     era: '2005 — 2016',
@@ -46,6 +52,19 @@ const chapters = [
               <p class="era">{ch.era}</p>
               <h3>{ch.title}</h3>
               <p class="chapter-text">{ch.body}</p>
+              {'ref' in ch && (
+                <p class="chapter-ref">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13Z" />
+                    <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-2.5" />
+                  </svg>
+                  <span>
+                    {ch.ref.text}{' '}
+                    <a href={ch.ref.href} target="_blank" rel="noopener"><em>{ch.ref.title}</em></a>{' '}
+                    {ch.ref.tail}
+                  </span>
+                </p>
+              )}
               <p class="chapter-mono">{ch.mono}</p>
             </div>
           </li>
@@ -113,6 +132,26 @@ const chapters = [
     max-width: 58ch;
     text-wrap: pretty;
   }
+  .chapter-ref {
+    display: flex;
+    gap: 0.55rem;
+    align-items: baseline;
+    margin-top: 0.9rem;
+    max-width: 56ch;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text-faint);
+  }
+  .chapter-ref svg { flex-shrink: 0; transform: translateY(2px); }
+  .chapter-ref em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.05em;
+    color: var(--text-dim);
+    transition: color 0.15s ease;
+  }
+  .chapter-ref a:hover em { color: var(--accent-bright); }
+
   .chapter-mono {
     margin-top: 0.9rem;
     font-family: var(--font-mono);
