@@ -1,0 +1,171 @@
+---
+interface Repo {
+  name: string;
+  html_url: string;
+  description: string | null;
+  language: string | null;
+  stargazers_count: number;
+  fork: boolean;
+  pushed_at: string;
+}
+
+const GITHUB_USER = 'kurtkluth';
+
+let repos: Repo[] = [];
+try {
+  const res = await fetch(
+    `https://api.github.com/users/${GITHUB_USER}/repos?sort=pushed&per_page=30`,
+    { headers: { Accept: 'application/vnd.github+json', 'User-Agent': 'sqlclr.com-build' } }
+  );
+  if (res.ok) {
+    const all: Repo[] = await res.json();
+    // originals first, then the forks I contribute to; freshest work on top
+    repos = [...all.filter((r) => !r.fork), ...all.filter((r) => r.fork)].slice(0, 6);
+  }
+} catch {
+  // network unavailable at build time — section falls back to the profile link only
+}
+
+const langColors: Record<string, string> = {
+  TypeScript: '#3178c6',
+  JavaScript: '#f1e05a',
+  'C#': '#178600',
+  TSQL: '#e38c00',
+  MDX: '#fcb32c',
+  Python: '#3572a5',
+  Shell: '#89e051',
+  HTML: '#e34c26',
+  CSS: '#663399',
+};
+
+const fmt = new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric' });
+---
+
+<section id="work" class="section-pad work">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal">The work</p>
+      <h2 class="h-section reveal" style="--reveal-delay: 0.06s">
+        Open code, <em class="serif-accent">open history</em>
+      </h2>
+      <p class="lede reveal" style="--reveal-delay: 0.12s">
+        Live from GitHub at every deploy — the projects I'm building, the tools I rely on,
+        and the ideas I'm taking apart to see how they work.
+      </p>
+    </div>
+
+    {
+      repos.length > 0 ? (
+        <div class="repo-grid">
+          {repos.map((repo, i) => (
+            <a
+              class="repo-card reveal"
+              style={`--reveal-delay: ${(i % 3) * 0.07}s`}
+              href={repo.html_url}
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="repo-top">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="repo-icon">
+                  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z" />
+                </svg>
+                <span class="repo-name">{repo.name}</span>
+                {repo.fork && <span class="repo-badge">fork</span>}
+              </div>
+              <p class="repo-desc">{repo.description ?? 'No description yet — the code speaks for itself.'}</p>
+              <div class="repo-meta">
+                {repo.language && (
+                  <span class="repo-lang">
+                    <span class="lang-dot" style={`background:${langColors[repo.language] ?? '#8b949e'}`} />
+                    {repo.language}
+                  </span>
+                )}
+                <span>updated {fmt.format(new Date(repo.pushed_at))}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p class="lede reveal">
+          GitHub was unreachable at build time — find everything at{' '}
+          <a href={`https://github.com/${GITHUB_USER}`} style="color: var(--accent-bright)">
+            github.com/{GITHUB_USER}
+          </a>.
+        </p>
+      )
+    }
+
+    <div class="work-cta reveal">
+      <a class="btn btn-ghost" href={`https://github.com/${GITHUB_USER}?tab=repositories`} target="_blank" rel="noopener">
+        Everything on GitHub
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .work {
+    background: linear-gradient(180deg, transparent, rgba(12, 15, 21, 0.7) 18%, rgba(12, 15, 21, 0.7) 82%, transparent);
+  }
+  .repo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.1rem;
+  }
+  .repo-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--bg-card);
+    padding: 1.45rem 1.5rem;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .repo-card:hover {
+    border-color: rgba(88, 166, 255, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 46px -22px rgba(31, 111, 235, 0.3);
+  }
+  .repo-top { display: flex; align-items: center; gap: 0.55rem; }
+  .repo-icon { color: var(--text-faint); flex-shrink: 0; }
+  .repo-name {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--accent-bright);
+    overflow-wrap: anywhere;
+  }
+  .repo-badge {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 0.1rem 0.55rem;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .repo-desc {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .repo-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--text-faint);
+  }
+  .repo-lang { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .lang-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  .work-cta { margin-top: 2.4rem; }
+</style>

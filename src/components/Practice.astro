@@ -1,0 +1,108 @@
+---
+const capabilities = [
+  {
+    title: 'Governed extensibility',
+    body: 'CLR assemblies with explicit permission sets, signing, and catalog-level trust — extensibility your DBAs approve of and your auditors can trace.',
+    icon: 'M12 3 4 7v6c0 4.4 3.4 8.2 8 9 4.6-.8 8-4.6 8-9V7l-8-4Z M9 12l2 2 4-4',
+  },
+  {
+    title: 'Hardened execution boundaries',
+    body: 'In-engine code that respects the host: memory-safe, escalation-free, designed for CLR strict security from day one — not patched into compliance later.',
+    icon: 'M4 4h16v16H4z M9 4v16 M4 9h16',
+  },
+  {
+    title: 'Cross-platform logic',
+    body: 'One codebase for SQL Server on Windows, Linux, and containers. .NET logic that deploys identically wherever the engine runs.',
+    icon: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z M2 12h20 M12 2c3 3 3 17 0 20 M12 2c-3 3-3 17 0 20',
+  },
+  {
+    title: 'Legacy xp_ migration',
+    body: 'Still running extended stored procedures? I have written them, debugged them, and buried them. I move that logic into governed CLR without breaking a single caller.',
+    icon: 'M4 12h10 M10 6l6 6-6 6 M20 4v16',
+  },
+  {
+    title: 'Performance at the boundary',
+    body: 'When set-based T-SQL is not enough — streaming TVFs, custom aggregates, and native-speed string and binary work, measured and tuned inside the engine.',
+    icon: 'M3 17 9 11l4 4 8-8 M16 7h5v5',
+  },
+  {
+    title: 'Architecture & review',
+    body: 'Design reviews, upgrade paths, and security assessments for estates that depend on in-engine code. I tell you what will break before the engine does.',
+    icon: 'M9.5 3h5l1 3.5 3 1.5 3.5-1-2.5 4.5v2l2.5 4.5-3.5-1-3 1.5-1 3.5h-5l-1-3.5-3-1.5-3.5 1L5 13.5v-2L2.5 7l3.5 1 3-1.5 1-3.5Z',
+  },
+];
+---
+
+<section id="practice" class="section-pad">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal">The practice</p>
+      <h2 class="h-section reveal" style="--reveal-delay: 0.06s">
+        What I build, <em class="serif-accent">and why it lasts</em>
+      </h2>
+      <p class="lede reveal" style="--reveal-delay: 0.12s">
+        Every engagement is anchored to the same principle: code that lives inside the
+        engine must earn its place there — governed, verifiable, and maintainable by the
+        team you have, not the consultant you had.
+      </p>
+    </div>
+
+    <div class="cap-grid">
+      {
+        capabilities.map((cap, i) => (
+          <article class="cap-card reveal" style={`--reveal-delay: ${(i % 3) * 0.07}s`}>
+            <div class="cap-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d={cap.icon} />
+              </svg>
+            </div>
+            <h3>{cap.title}</h3>
+            <p>{cap.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.1rem;
+  }
+  .cap-card {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: linear-gradient(170deg, var(--bg-card), rgba(14, 18, 25, 0.4));
+    padding: 1.7rem 1.6rem;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .cap-card:hover {
+    border-color: rgba(88, 166, 255, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 46px -22px rgba(31, 111, 235, 0.35);
+  }
+  .cap-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    color: var(--accent-bright);
+    background: linear-gradient(160deg, rgba(31, 111, 235, 0.22), rgba(31, 111, 235, 0.04));
+    border: 1px solid rgba(88, 166, 255, 0.24);
+    margin-bottom: 1.15rem;
+  }
+  .cap-card h3 {
+    font-size: 1.06rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.55rem;
+  }
+  .cap-card p {
+    font-size: 0.93rem;
+    color: var(--text-dim);
+    line-height: 1.62;
+  }
+</style>

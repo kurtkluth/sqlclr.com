@@ -1,0 +1,127 @@
+---
+const chapters = [
+  {
+    era: '1998 — 2005',
+    title: 'The extended stored procedure era',
+    body: `We wrote xp_ DLLs in C against the Open Data Services API and loaded them straight into the engine's address space. One stray pointer could take down the entire server — and sometimes did, at 2 a.m., with a pager screaming. It was raw, unforgiving, and it taught a generation of us exactly where the engine's boundaries are, because we paid for every one we crossed.`,
+    mono: 'xp_yourproc.dll → sqlservr.exe',
+  },
+  {
+    era: '2005 — 2016',
+    title: 'CLR integration changes everything',
+    body: `SQL Server 2005 brought the .NET runtime inside the engine — hosted, sandboxed, governed. The chaos of unmanaged DLLs gave way to verifiable assemblies with declared permission sets. Those of us who carried the scars of the xp_ era understood immediately what this meant: all of the power, with boundaries the engine itself enforces.`,
+    mono: 'CREATE ASSEMBLY … PERMISSION_SET = SAFE',
+  },
+  {
+    era: '2017 — today',
+    title: 'Governed, hardened, cross-platform',
+    body: `SQL Server runs on Linux and in containers now, and CLR strict security made trust explicit — signed assemblies, auditable boundaries, no shortcuts. My practice today: in-engine services that pass a security review, survive an engine upgrade, and run identically on Windows, Linux, and Kubernetes. Extensibility you can govern is extensibility you can keep.`,
+    mono: 'signed · audited · win + linux + k8s',
+  },
+];
+---
+
+<section id="story" class="section-pad story">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal">The story</p>
+      <h2 class="h-section reveal" style="--reveal-delay: 0.06s">
+        Twenty-five years at the<br />
+        <em class="serif-accent">engine boundary</em>
+      </h2>
+      <p class="lede reveal" style="--reveal-delay: 0.12s">
+        Most careers in data happen above the engine. Mine happened at the line where
+        your code becomes the engine's problem — and the engine's stability becomes yours.
+      </p>
+    </div>
+
+    <ol class="timeline">
+      {
+        chapters.map((ch, i) => (
+          <li class="chapter reveal" style={`--reveal-delay: ${i * 0.08}s`}>
+            <div class="marker" aria-hidden="true">
+              <span class="marker-dot" />
+            </div>
+            <div class="chapter-body">
+              <p class="era">{ch.era}</p>
+              <h3>{ch.title}</h3>
+              <p class="chapter-text">{ch.body}</p>
+              <p class="chapter-mono">{ch.mono}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .story {
+    background: linear-gradient(180deg, transparent, rgba(12, 15, 21, 0.7) 18%, rgba(12, 15, 21, 0.7) 82%, transparent);
+  }
+  .timeline {
+    list-style: none;
+    display: grid;
+    gap: 0;
+    max-width: 760px;
+  }
+  .chapter {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 1.6rem;
+    padding-bottom: 3.4rem;
+    position: relative;
+  }
+  .chapter:last-child { padding-bottom: 0; }
+
+  .marker { position: relative; display: flex; justify-content: center; }
+  .marker::before {
+    content: '';
+    position: absolute;
+    top: 26px;
+    bottom: -8px;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(88, 166, 255, 0.5), var(--line));
+  }
+  .chapter:last-child .marker::before { display: none; }
+  .marker-dot {
+    width: 13px;
+    height: 13px;
+    margin-top: 6px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 18px rgba(88, 166, 255, 0.55);
+    flex-shrink: 0;
+  }
+
+  .era {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: var(--ember);
+    margin-bottom: 0.5rem;
+  }
+  .chapter h3 {
+    font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.7rem;
+  }
+  .chapter-text {
+    color: var(--text-dim);
+    max-width: 58ch;
+    text-wrap: pretty;
+  }
+  .chapter-mono {
+    margin-top: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    background: rgba(148, 163, 184, 0.06);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.45rem 0.8rem;
+    display: inline-block;
+  }
+</style>

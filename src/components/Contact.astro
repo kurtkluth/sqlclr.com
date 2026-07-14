@@ -1,0 +1,80 @@
+---
+
+---
+
+<section id="contact" class="section-pad contact">
+  <div class="contact-glow" aria-hidden="true"></div>
+  <div class="container contact-inner">
+    <p class="eyebrow reveal" style="justify-content: center;">Contact</p>
+    <h2 class="h-section reveal" style="--reveal-delay: 0.06s">
+      Your engine has a boundary.<br />
+      <em class="serif-accent">Let's make it a strength.</em>
+    </h2>
+    <p class="lede reveal" style="--reveal-delay: 0.12s; margin-inline: auto;">
+      Whether you're carrying twenty-year-old extended stored procedures or designing
+      new in-engine services, the conversation starts the same way: tell me what your
+      database needs to do that T-SQL alone can't.
+    </p>
+    <div class="contact-cta reveal" style="--reveal-delay: 0.2s">
+      <a class="btn btn-primary" href="mailto:kurtkluth@icloud.com">
+        kurtkluth@icloud.com
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/kurtkluth" target="_blank" rel="noopener">
+        GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-brand">
+      <span style="font-family: var(--font-mono);">sqlclr<span style="color: var(--text-faint)">.com</span></span>
+      — Kurt M. Kluth · San Clemente, CA
+    </p>
+    <p class="footer-note">
+      Built with Astro · Designed & engineered with Claude Fable 5 · © {new Date().getFullYear()}
+    </p>
+  </div>
+</footer>
+
+<style>
+  .contact { text-align: center; overflow: hidden; }
+  .contact-glow {
+    position: absolute;
+    left: 50%;
+    bottom: -320px;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 560px;
+    background: radial-gradient(ellipse at center, rgba(31, 111, 235, 0.2), transparent 65%);
+    pointer-events: none;
+  }
+  .contact-inner {
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+    position: relative;
+    max-width: 46rem;
+  }
+  .contact-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
+
+  .footer {
+    border-top: 1px solid var(--line);
+    padding-block: 2rem;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--text-faint);
+  }
+  .footer-brand { color: var(--text-dim); }
+</style>
