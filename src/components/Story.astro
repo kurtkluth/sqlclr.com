@@ -1,27 +1,27 @@
 ---
 const chapters = [
   {
-    era: '1998 — 2005',
+    era: '1998 to 2005',
     title: 'The extended stored procedure era',
-    body: `We wrote xp_ DLLs in C against the Open Data Services API and loaded them straight into the engine's address space. One stray pointer could take down the entire server — and sometimes did, at 2 a.m., with a pager screaming. It was raw, unforgiving, and it taught a generation of us exactly where the engine's boundaries are, because we paid for every one we crossed.`,
+    body: `We wrote xp_ DLLs in C against the Open Data Services API and loaded them straight into the engine's address space. One stray pointer could take down the entire server. Sometimes it did, at 2 a.m., with a pager screaming. It was raw, unforgiving, and it taught a generation of us exactly where the engine's boundaries are, because we paid for every one we crossed.`,
     mono: 'xp_yourproc.dll → sqlservr.exe',
     ref: {
       href: 'http://www.naughter.com/supersqlsystems.html',
       text: 'The era had a canon: Gama & Naughter,',
       title: 'Super SQL Server Systems',
-      tail: '(2006) — 570 pages of native-code XPs, dog-eared on the desk of everyone who did this work.',
+      tail: '(2006). Its 570 pages of native-code XPs sat dog-eared on the desk of everyone who did this work.',
     },
   },
   {
-    era: '2005 — 2016',
+    era: '2005 to 2016',
     title: 'CLR integration changes everything',
-    body: `SQL Server 2005 brought the .NET runtime inside the engine — hosted, sandboxed, governed. The chaos of unmanaged DLLs gave way to verifiable assemblies with declared permission sets. Those of us who carried the scars of the xp_ era understood immediately what this meant: all of the power, with boundaries the engine itself enforces.`,
+    body: `SQL Server 2005 brought the .NET runtime inside the engine. It was hosted, sandboxed, and governed. The chaos of unmanaged DLLs gave way to verifiable assemblies with declared permission sets. Those of us who carried the scars of the xp_ era understood immediately what this meant: all of the power, with boundaries the engine itself enforces.`,
     mono: 'CREATE ASSEMBLY … PERMISSION_SET = SAFE',
   },
   {
-    era: '2017 — today',
+    era: '2017 to today',
     title: 'Governed, hardened, cross-platform',
-    body: `SQL Server runs on Linux and in containers now, and CLR strict security made trust explicit — signed assemblies, auditable boundaries, no shortcuts. My practice today: in-engine services that pass a security review, survive an engine upgrade, and run identically on Windows, Linux, and Kubernetes. Extensibility you can govern is extensibility you can keep.`,
+    body: `SQL Server runs on Linux and in containers now, and CLR strict security made trust explicit. That means signed assemblies, auditable boundaries, and no shortcuts. My practice today: in-engine services that pass a security review, survive an engine upgrade, and run identically on Windows, Linux, and Kubernetes. Extensibility you can govern is extensibility you can keep.`,
     mono: 'signed · audited · win + linux + k8s',
   },
 ];
@@ -37,7 +37,7 @@ const chapters = [
       </h2>
       <p class="lede reveal" style="--reveal-delay: 0.12s">
         Most careers in data happen above the engine. Mine happened at the line where
-        your code becomes the engine's problem — and the engine's stability becomes yours.
+        your code becomes the engine's problem, and the engine's stability becomes yours.
       </p>
     </div>
 

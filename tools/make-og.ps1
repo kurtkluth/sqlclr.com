@@ -56,7 +56,7 @@ $fSub = New-Object System.Drawing.Font('Segoe UI', 24, [System.Drawing.FontStyle
 $g.DrawString('sqlclr.com', $fMono, $accent, 86, 180)
 $g.DrawString('Some engineers work near the', $fBig, $white, 80, 268)
 $g.DrawString('database. I work inside it.', $fBig, $white, 80, 348)
-$g.DrawString('Kurt Kluth — SQL Server Architect · Governed in-engine services', $fSub, $dim, 86, 476)
+$g.DrawString('Kurt Kluth · SQL Server Architect · Governed in-engine services', $fSub, $dim, 86, 476)
 
 $bmp.Save($out, [System.Drawing.Imaging.ImageFormat]::Png)
 $g.Dispose(); $bmp.Dispose()

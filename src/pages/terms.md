@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Legal.astro
 title: Terms of Service
-description: Terms of service for sqlclr.com — the agreement governing your use of this website and its content.
+description: Terms of service for sqlclr.com, the agreement governing your use of this website and its content.
 ---
 
 # Terms of Service
@@ -10,7 +10,7 @@ description: Terms of service for sqlclr.com — the agreement governing your us
 
 Welcome to sqlclr.com! These Terms of Service ("Terms") govern your use of our website and its content (collectively, the "Service"). By accessing or using our Service, you agree to be bound by these Terms.
 
-**Quick Summary:** sqlclr.com is a content website — there are no accounts to create, nothing to buy, and nothing to upload. These terms establish a fair relationship between us and you: we provide informational content, and you agree to use it responsibly.
+**Quick Summary:** sqlclr.com is a content website. There are no accounts to create, nothing to buy, and nothing to upload. These terms establish a fair relationship between us and you: we provide informational content, and you agree to use it responsibly.
 
 ## 1. Acceptance of Terms
 
@@ -20,7 +20,7 @@ These Terms apply to all visitors. If you are using our Service on behalf of an 
 
 ## 2. Description of Service
 
-sqlclr.com provides content focused on SQL Server architecture — including CLR-based in-engine services, extended stored procedure history and migration, and related .NET technologies. Our Service includes:
+sqlclr.com provides content focused on SQL Server architecture, including CLR-based in-engine services, extended stored procedure history and migration, and related .NET technologies. Our Service includes:
 
 - Articles, historical references, and technical resources
 - Links to open-source projects and code repositories

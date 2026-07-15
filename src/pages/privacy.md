@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Legal.astro
 title: Privacy Policy
-description: Privacy policy for sqlclr.com — a static site with no accounts, no tracking cookies, and minimal data collection.
+description: Privacy policy for sqlclr.com, a static site with no accounts, no tracking cookies, and minimal data collection.
 ---
 
 # Privacy Policy
@@ -68,7 +68,7 @@ We do not use your information for marketing, profiling, or automated decision-m
 
 ### Service Providers
 
-We use trusted third-party providers to operate this website — such as cloud hosting and email services. These providers process data (like server logs and email) on our behalf and are bound to protect it.
+We use trusted third-party providers to operate this website, such as cloud hosting and email services. These providers process data (like server logs and email) on our behalf and are bound to protect it.
 
 ### Business Transfers
 
@@ -88,7 +88,7 @@ We take reasonable, industry-standard measures to protect the limited informatio
 
 - **Encryption:** This website is served over HTTPS, and email is handled by providers using encryption in transit
 - **Access Controls:** Only authorized persons can access correspondence and hosting infrastructure
-- **Minimal Collection:** The most effective protection — we simply collect very little
+- **Minimal Collection:** The most effective protection is that we simply collect very little
 
 While we take precautions, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security but are committed to protecting your information.
 

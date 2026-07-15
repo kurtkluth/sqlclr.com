@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Legal.astro
 title: Legal Disclaimer
-description: Legal disclaimer for sqlclr.com — informational purposes, no professional advice, limitation of liability.
+description: Legal disclaimer for sqlclr.com covering informational purposes, no professional advice, and limitation of liability.
 ---
 
 # Legal Disclaimer

@@ -49,8 +49,8 @@ const fmt = new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric' }
         Open code, <em class="serif-accent">open history</em>
       </h2>
       <p class="lede reveal" style="--reveal-delay: 0.12s">
-        Live from GitHub at every deploy — the projects I'm building, the tools I rely on,
-        and the ideas I'm taking apart to see how they work.
+        Pulled live from GitHub at every deploy. Here are the projects I'm building, the
+        tools I rely on, and the ideas I'm taking apart to see how they work.
       </p>
     </div>
 
@@ -72,7 +72,7 @@ const fmt = new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric' }
                 <span class="repo-name">{repo.name}</span>
                 {repo.fork && <span class="repo-badge">fork</span>}
               </div>
-              <p class="repo-desc">{repo.description ?? 'No description yet — the code speaks for itself.'}</p>
+              <p class="repo-desc">{repo.description ?? 'No description yet. The code speaks for itself.'}</p>
               <div class="repo-meta">
                 {repo.language && (
                   <span class="repo-lang">
@@ -87,7 +87,7 @@ const fmt = new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric' }
         </div>
       ) : (
         <p class="lede reveal">
-          GitHub was unreachable at build time — find everything at{' '}
+          GitHub was unreachable at build time. Find everything at{' '}
           <a href={`https://github.com/${GITHUB_USER}`} style="color: var(--accent-bright)">
             github.com/{GITHUB_USER}
           </a>.
