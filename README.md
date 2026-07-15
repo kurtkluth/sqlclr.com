@@ -1,6 +1,8 @@
 # sqlclr.com
 
-Personal brand site for Kurt Kluth — SQL Server architect. Built with [Astro](https://astro.build).
+Personal brand site for Kurt Kluth, SQL Server architect. Built with [Astro](https://astro.build).
+
+Site history lives in [CHANGELOG.md](CHANGELOG.md).
 
 ## Develop
 
