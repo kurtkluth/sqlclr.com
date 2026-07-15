@@ -14,7 +14,7 @@
       <a href="/disclaimer">Disclaimer</a>
     </nav>
     <p class="footer-note">
-      Built with Astro · Designed & engineered with Claude Fable 5 · © {new Date().getFullYear()}
+      Crafted by the <a href="https://kluthstudios.com" target="_blank" rel="noopener">Kluth Studios</a> team · © {new Date().getFullYear()}
     </p>
   </div>
 </footer>
@@ -44,4 +44,9 @@
     transition: color 0.15s ease;
   }
   .footer-legal a:hover { color: var(--text); }
+  .footer-note a {
+    color: var(--text-dim);
+    transition: color 0.15s ease;
+  }
+  .footer-note a:hover { color: var(--accent-bright); }
 </style>
