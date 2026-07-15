@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Legal.astro
 title: Privacy Policy
-description: Privacy policy for sqlclr.com — what we collect, how we use it, and your rights over your data.
+description: Privacy policy for sqlclr.com — a static site with no accounts, no tracking cookies, and minimal data collection.
 ---
 
 # Privacy Policy
@@ -10,7 +10,7 @@ description: Privacy policy for sqlclr.com — what we collect, how we use it, a
 
 sqlclr.com ("we," "our," or "us") is committed to protecting your privacy and being transparent about how we collect, use, and protect your personal information. This Privacy Policy explains our data practices in clear, understandable terms.
 
-**Quick Summary:** We collect only the information necessary to provide our services, never sell your personal data, and give you full control over your information. You have the right to access, correct, or delete your data at any time.
+**Quick Summary:** sqlclr.com is a static content website. There are no accounts, no payments, no tracking cookies, and no analytics scripts. The only personal information we receive is what you choose to send us (such as an email), plus the standard server logs kept by our hosting provider. We never sell personal data.
 
 ## 1. Data Controller Information
 
@@ -27,46 +27,32 @@ Phone: (949) 412-9490
 
 ### Information You Provide Directly
 
-- **Account Information:** Name, email address, password, and profile details
-- **Communication Data:** Messages you send us, support requests, and feedback
-- **Payment Information:** Billing address and payment method details (processed securely by our payment processors)
-- **Service Data:** Content you create, upload, or share through our services
+- **Communication Data:** If you contact us by email, we receive your email address, name (if you include it), and the contents of your message.
 
-### Information We Collect Automatically
+We do not offer accounts, process payments, or host user-generated content, so we do not collect passwords, billing details, or uploaded content.
 
-- **Usage Data:** How you interact with our services, features used, and time spent
-- **Device Information:** IP address, browser type, operating system, device identifiers
-- **Analytics Data:** Performance metrics, error logs, and usage patterns
-- **Location Data:** General geographic location based on IP address
+### Information Collected Automatically
 
-### Information from Third Parties
+Like virtually every website, the servers that host sqlclr.com keep standard access logs, which may include:
 
-We may receive information from business partners, social media platforms (if you connect your accounts), and public databases, but only when necessary for providing our services.
+- **Device Information:** IP address, browser type, and operating system
+- **Usage Data:** Pages requested, referring page, and time of request
+
+These logs exist for security, abuse prevention, and operational troubleshooting. We run no analytics or tracking scripts of our own.
 
 ## 3. How We Use Your Information
 
-We process your personal information for the following purposes:
+We process personal information only for the following purposes:
 
-### Service Provision (Legal Basis: Contract Performance)
+### Responding to You (Legal Basis: Legitimate Interest or Consent)
 
-- Creating and managing your account
-- Providing our services and features
-- Processing payments and transactions
-- Providing customer support
+- Answering your inquiries and correspondence
+- Following up on consulting or service requests you initiate
 
-### Service Improvement (Legal Basis: Legitimate Interest)
+### Operating the Service (Legal Basis: Legitimate Interest)
 
-- Analyzing usage patterns to improve functionality
-- Developing new features and services
-- Conducting research and analytics
-- Testing and optimizing our platform
-
-### Communication (Legal Basis: Consent or Legitimate Interest)
-
-- Sending service updates and important notices
-- Responding to your inquiries and support requests
-- Marketing communications (only with your consent)
-- Security alerts and fraud prevention
+- Maintaining the security and availability of the website
+- Diagnosing technical problems and preventing abuse
 
 ### Legal Compliance (Legal Basis: Legal Obligation)
 
@@ -74,17 +60,19 @@ We process your personal information for the following purposes:
 - Responding to legal processes and law enforcement requests
 - Protecting our rights and preventing fraud
 
+We do not use your information for marketing, profiling, or automated decision-making.
+
 ## 4. Information Sharing and Disclosure
 
 **We never sell your personal information.** We only share your information in the following limited circumstances:
 
 ### Service Providers
 
-We work with trusted third-party companies that help us operate our services, such as cloud hosting providers, payment processors, and analytics services. These providers are contractually bound to protect your information and use it only for the services they provide to us.
+We use trusted third-party providers to operate this website — such as cloud hosting and email services. These providers process data (like server logs and email) on our behalf and are bound to protect it.
 
 ### Business Transfers
 
-If we are involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you before your information is transferred and becomes subject to a different privacy policy.
+If we are involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you before your information becomes subject to a different privacy policy.
 
 ### Legal Requirements
 
@@ -96,25 +84,20 @@ We may share your information with your explicit consent for specific purposes n
 
 ## 5. Data Security
 
-We implement industry-standard security measures to protect your personal information:
+We take reasonable, industry-standard measures to protect the limited information we hold:
 
-- **Encryption:** Data is encrypted in transit and at rest using advanced encryption standards
-- **Access Controls:** Strict access controls ensure only authorized personnel can access your data
-- **Regular Audits:** We regularly review and update our security practices
-- **Incident Response:** We have procedures in place to detect and respond to security incidents
-- **Employee Training:** Our team is trained on data protection and security best practices
+- **Encryption:** This website is served over HTTPS, and email is handled by providers using encryption in transit
+- **Access Controls:** Only authorized persons can access correspondence and hosting infrastructure
+- **Minimal Collection:** The most effective protection — we simply collect very little
 
-While we take extensive precautions, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security but are committed to protecting your information using the most current security standards.
+While we take precautions, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security but are committed to protecting your information.
 
 ## 6. Data Retention
 
-We retain your personal information only as long as necessary for the purposes outlined in this policy:
+We retain personal information only as long as necessary:
 
-- **Account Data:** For the duration of your account plus 90 days after deletion
-- **Transaction Records:** 7 years for tax and legal compliance
-- **Support Communications:** 3 years for service improvement
-- **Analytics Data:** Anonymized data may be retained indefinitely for research
-- **Marketing Data:** Until you withdraw consent or 2 years of inactivity
+- **Support and Business Communications:** Up to 3 years, so we have context if you contact us again
+- **Server Logs:** Retained by our hosting provider for a short operational window, typically 90 days or less
 
 ## 7. Your Privacy Rights
 
@@ -132,42 +115,35 @@ You have significant control over your personal information. Depending on your l
 
 - **Restriction:** Limit how we process your information
 - **Objection:** Object to processing based on legitimate interests
-- **Automated Decision-Making:** Opt out of automated profiling
 - **Complaint:** File a complaint with your local data protection authority
 
 ### California Residents (CCPA/CPRA)
 
 - **Know:** Detailed information about data collection and sharing
 - **Delete:** Request deletion of personal information
-- **Opt-Out:** Opt out of the "sale" or "sharing" of personal information
+- **Opt-Out:** Opt out of the "sale" or "sharing" of personal information (we do neither)
 - **Non-Discrimination:** Equal service regardless of privacy choices
-- **Sensitive Data:** Limit use of sensitive personal information
 
 **To exercise your rights:** Email us at support@kurtkluth.com. We will respond within 30 days and may need to verify your identity for security purposes.
 
 ## 8. International Data Transfers
 
-We may transfer your information to countries outside your country of residence. When we do:
-
-- We ensure appropriate safeguards are in place (such as EU Standard Contractual Clauses)
-- We work only with partners who provide adequate protection for your data
-- We implement additional security measures for international transfers
+This website is operated from the United States, so if you access it from elsewhere, your information (such as server logs or email) is processed in the United States. Where required, we rely on appropriate safeguards for such transfers.
 
 ## 9. Cookies and Tracking Technologies
 
-We use only the cookies and similar technologies necessary to operate our website and embedded services. You can manage or block cookies through your browser settings at any time.
+sqlclr.com is a static website: it sets no cookies and uses no tracking, advertising, or analytics technologies. You can verify this in your browser's developer tools at any time.
 
 ## 10. Children's Privacy
 
-Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately so we can delete it.
+Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have received information from a child under 13, please contact us immediately so we can delete it.
 
 ## 11. Changes to This Policy
 
 We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements. We will:
 
-- Notify you of material changes via email or prominent notice on our website
-- Post the updated policy with the new effective date
-- Maintain previous versions for your reference
+- Post the updated policy on this page with a new effective date
+- Provide prominent notice on the website for material changes
 
 ## 12. California "Do Not Sell" Notice
 
@@ -193,4 +169,4 @@ United States
 
 **California Residents:** You can file complaints with the California Privacy Protection Agency.
 
-_This Privacy Policy is designed to be comprehensive and compliant with major privacy regulations worldwide. For questions about specific legal requirements in your jurisdiction, please contact us._
+_This Privacy Policy reflects a deliberately minimal data footprint. For questions about specific legal requirements in your jurisdiction, please contact us._
