@@ -1,0 +1,47 @@
+---
+
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-brand">
+      <span style="font-family: var(--font-mono);">sqlclr<span style="color: var(--text-faint)">.com</span></span>
+      — Kurt Kluth · San Clemente, CA
+    </p>
+    <nav class="footer-legal" aria-label="Legal">
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/disclaimer">Disclaimer</a>
+    </nav>
+    <p class="footer-note">
+      Built with Astro · Designed & engineered with Claude Fable 5 · © {new Date().getFullYear()}
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--line);
+    padding-block: 2rem;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem 2rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--text-faint);
+  }
+  .footer-brand { color: var(--text-dim); }
+  .footer-legal {
+    display: flex;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+  }
+  .footer-legal a {
+    color: var(--text-faint);
+    transition: color 0.15s ease;
+  }
+  .footer-legal a:hover { color: var(--text); }
+</style>

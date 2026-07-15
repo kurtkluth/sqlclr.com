@@ -13,6 +13,7 @@ interface Props {
 
 const { title, description } = Astro.props;
 const ogImage = new URL('/og.png', Astro.site ?? Astro.url);
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 ---
 
 <!doctype html>
@@ -23,14 +24,14 @@ const ogImage = new URL('/og.png', Astro.site ?? Astro.url);
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href={Astro.site?.toString() ?? Astro.url.toString()} />
+    <link rel="canonical" href={canonical.toString()} />
     <meta name="theme-color" content="#07090d" />
     <script is:inline>document.documentElement.classList.add('js');</script>
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={Astro.site?.toString() ?? Astro.url.toString()} />
+    <meta property="og:url" content={canonical.toString()} />
     <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -41,7 +42,7 @@ const ogImage = new URL('/og.png', Astro.site ?? Astro.url);
       set:html={JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Person',
-        name: 'Kurt M. Kluth',
+        name: 'Kurt Kluth',
         url: 'https://sqlclr.com',
         jobTitle: 'SQL Server Architect',
         sameAs: ['https://github.com/kurtkluth'],

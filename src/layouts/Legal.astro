@@ -1,0 +1,90 @@
+---
+import Base from './Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<Base title={`${frontmatter.title} — sqlclr.com`} description={frontmatter.description}>
+  <Nav />
+  <main class="legal">
+    <div class="container">
+      <article class="legal-prose">
+        <slot />
+      </article>
+    </div>
+  </main>
+  <Footer />
+</Base>
+
+<style is:global>
+  .legal {
+    padding-top: calc(66px + clamp(3rem, 8vw, 5rem));
+    padding-bottom: clamp(4rem, 9vw, 6rem);
+  }
+  .legal-prose {
+    max-width: 72ch;
+  }
+  .legal-prose h1 {
+    font-size: clamp(2.1rem, 5vw, 3rem);
+    font-weight: 620;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.6rem;
+  }
+  .legal-prose h1 + p strong {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ember);
+  }
+  .legal-prose h2 {
+    font-size: 1.45rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 2.6rem 0 0.9rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .legal-prose h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 1.8rem 0 0.6rem;
+    color: var(--accent-bright);
+  }
+  .legal-prose p {
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+    text-wrap: pretty;
+  }
+  .legal-prose ul {
+    margin: 0 0 1.2rem;
+    padding-left: 1.3rem;
+    display: grid;
+    gap: 0.45rem;
+  }
+  .legal-prose li {
+    color: var(--text-dim);
+  }
+  .legal-prose li::marker {
+    color: var(--accent);
+  }
+  .legal-prose strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .legal-prose a {
+    color: var(--accent-bright);
+    text-decoration: underline;
+    text-decoration-color: rgba(88, 166, 255, 0.35);
+    text-underline-offset: 3px;
+  }
+  .legal-prose a:hover { text-decoration-color: var(--accent-bright); }
+  .legal-prose em {
+    color: var(--text-faint);
+  }
+</style>
