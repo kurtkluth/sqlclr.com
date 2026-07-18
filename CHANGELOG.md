@@ -3,6 +3,20 @@
 A history of notable changes to sqlclr.com. Newest entries first. Commit hashes refer to
 [github.com/kurtkluth/sqlclr.com](https://github.com/kurtkluth/sqlclr.com).
 
+## 2026-07-18
+
+### Light and dark mode
+
+- Added a full light theme alongside the existing dark theme. All color tokens now resolve
+  per theme through `:root[data-theme='light' | 'dark']` in `global.css`, with new helper
+  tokens (`--tint`, `--bg-card-2`, `--fill-soft`, `--selection`, `--theme-color`) so the
+  section bands, cards, and chips that previously used hard-coded colors adapt cleanly.
+- A sun/moon toggle in the nav switches themes; the choice is saved to `localStorage` and
+  applied before first paint by an inline script in the head, so there is no flash. First
+  visits follow the OS `prefers-color-scheme`, defaulting to dark. The `theme-color` meta
+  updates with the active theme.
+- The Hero terminal stays dark in both themes by design, reading as a code-editor island.
+
 ## 2026-07-14
 
 ### Prose style pass (`6a4ecb9`)
