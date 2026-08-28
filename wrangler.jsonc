@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sqlclr-com",
+  "compatibility_date": "2026-08-28",
+
+  // Static-assets-only Worker. There is no `main` entry point because this
+  // site is fully pre-rendered (astro.config.mjs sets output: 'static'), so
+  // Cloudflare just serves what `astro build` emitted into ./dist.
+  //
+  // This file also stops `wrangler deploy` from treating the project as
+  // unconfigured and trying to run `astro add cloudflare` mid-build.
+  "assets": {
+    "directory": "./dist"
+  }
+}
