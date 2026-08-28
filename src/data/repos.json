@@ -1,0 +1,53 @@
+{
+  "syncedAt": "2026-08-28T22:41:06.972Z",
+  "repos": [
+    {
+      "name": "sqlclr.com",
+      "html_url": "https://github.com/kurtkluth/sqlclr.com",
+      "description": "Personal site of Kurt Kluth, SQL Server architect. Governed CLR-based in-engine services. Built with Astro.",
+      "language": "Astro",
+      "fork": false,
+      "pushed_at": "2026-08-28T22:11:29Z"
+    },
+    {
+      "name": "kurtkluth.dev",
+      "html_url": "https://github.com/kurtkluth/kurtkluth.dev",
+      "description": "kurtkluth.dev will be home to helpfull tips and tricks.",
+      "language": "TypeScript",
+      "fork": false,
+      "pushed_at": "2026-07-26T08:04:33Z"
+    },
+    {
+      "name": "docs",
+      "html_url": "https://github.com/kurtkluth/docs",
+      "description": null,
+      "language": "MDX",
+      "fork": false,
+      "pushed_at": "2026-06-24T14:01:07Z"
+    },
+    {
+      "name": "data-warehouse-starter",
+      "html_url": "https://github.com/kurtkluth/data-warehouse-starter",
+      "description": "Starter repo for VA-compliant SQL Server data warehouse with SSIS scaffolding",
+      "language": null,
+      "fork": false,
+      "pushed_at": "2025-07-01T17:15:35Z"
+    },
+    {
+      "name": "dub",
+      "html_url": "https://github.com/kurtkluth/dub",
+      "description": "The modern link attribution platform. Loved by world-class marketing teams like Framer, Perplexity, Superhuman, Twilio, Buffer and more.",
+      "language": null,
+      "fork": true,
+      "pushed_at": "2026-08-16T06:44:48Z"
+    },
+    {
+      "name": "documenso",
+      "html_url": "https://github.com/kurtkluth/documenso",
+      "description": "The Open Source DocuSign Alternative.",
+      "language": null,
+      "fork": true,
+      "pushed_at": "2026-08-16T06:08:08Z"
+    }
+  ]
+}

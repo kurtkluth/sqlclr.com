@@ -1,32 +1,23 @@
 ---
+import data from '../data/repos.json';
+
 interface Repo {
   name: string;
   html_url: string;
   description: string | null;
   language: string | null;
-  stargazers_count: number;
   fork: boolean;
   pushed_at: string;
 }
 
 const GITHUB_USER = 'kurtkluth';
 
-let repos: Repo[] = [];
-try {
-  const res = await fetch(
-    `https://api.github.com/users/${GITHUB_USER}/repos?sort=pushed&per_page=30`,
-    { headers: { Accept: 'application/vnd.github+json', 'User-Agent': 'sqlclr.com-build' } }
-  );
-  if (res.ok) {
-    const all: Repo[] = await res.json();
-    // originals first, then the forks I contribute to; freshest work on top
-    repos = [...all.filter((r) => !r.fork), ...all.filter((r) => r.fork)].slice(0, 6);
-  }
-} catch {
-  // network unavailable at build time — section falls back to the profile link only
-}
+// Committed snapshot, refreshed on demand with `npm run sync:repos`.
+// Deliberately not fetched during the build — see tools/sync-repos.mjs for why.
+const repos: Repo[] = data.repos;
 
 const langColors: Record<string, string> = {
+  Astro: '#ff5d01',
   TypeScript: '#3178c6',
   JavaScript: '#f1e05a',
   'C#': '#178600',
@@ -49,8 +40,8 @@ const fmt = new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric' }
         Open code, <em class="serif-accent">open history</em>
       </h2>
       <p class="lede reveal" style="--reveal-delay: 0.12s">
-        Pulled live from GitHub at every deploy. Here are the projects I'm building, the
-        tools I rely on, and the ideas I'm taking apart to see how they work.
+        Here are the projects I'm building, the tools I rely on, and the ideas I'm taking
+        apart to see how they work.
       </p>
     </div>
 
@@ -87,7 +78,7 @@ const fmt = new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric' }
         </div>
       ) : (
         <p class="lede reveal">
-          GitHub was unreachable at build time. Find everything at{' '}
+          The project list is being refreshed. Find everything at{' '}
           <a href={`https://github.com/${GITHUB_USER}`} style="color: var(--accent-bright)">
             github.com/{GITHUB_USER}
           </a>.
